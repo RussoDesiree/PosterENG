@@ -50,12 +50,12 @@
         .control {
             pointer-events: auto; /* rendi cliccabile il bottone */
             
-            /* MODIFICA: Sfondo reso leggermente più trasparente */
-            background: rgba(0,0,0,0.40);
+            /* MODIFICA: Sfondo del cerchio reso trasparente */
+            background: transparent; 
             
             border-radius: 999px;
             
-            /* MODIFICA: Dimensioni del pulsante ridotte */
+            /* Dimensioni del pulsante (già ridotte in precedenza) */
             width: 60px;
             height: 60px;
             
@@ -70,12 +70,15 @@
         }
         .control:hover { transform: scale(1.04); }
         .control svg {
-            /* MODIFICA: Dimensioni dell'icona ridotte */
+            /* Dimensioni dell'icona (già ridotte in precedenza) */
             width: 28px;
             height: 28px;
             
             fill: white;
             opacity: 0.95;
+            
+            /* MODIFICA AGGIUNTIVA: Aggiungo un'ombra per far risaltare l'icona */
+            filter: drop-shadow(0 0 3px rgba(0,0,0,0.7));
         }
         .status {
             position: absolute;
@@ -107,9 +110,8 @@
         }
         .error.show { display: block; }
 
-        /* Mobile: lascia più spazio per il tocco */
+        /* Mobile: dimensioni ridotte */
         @media (max-width: 480px) {
-            /* MODIFICA: Dimensioni ridotte anche per mobile */
             .control { width: 54px; height: 54px; }
             .control svg { width: 24px; height: 24px; }
         }
